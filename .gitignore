@@ -5,4 +5,8 @@ db.json
 node_modules/
 public/
 .deploy*/
-themes/
+themes/yilia/node_modules/
+themes/yilia/.deploy*/
+themes/yilia/*.log
+themes/yilia/.DS_Store
+themes/yilia/Thumbs.db
