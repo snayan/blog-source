@@ -1,5 +1,5 @@
 ---
-title: React 16.2.0源码学习(二)
+title: React 16学习(二)
 date: 2018-03-02 21:05:48
 tags: react
 ---
