@@ -14,6 +14,7 @@ tags: vue
 4. 熟悉vuex是如何运作的，模块化维护应用状态数据
 5. 体验typescript的开发方式
 如果想学vue的不妨进来看看。
+项目源码地址：[点击这里](https://github.com/snayan/vue-task)
 
 ### 技术栈
 
@@ -21,7 +22,7 @@ tags: vue
 * vuex
 * vue-router
 * typescript
-
+<!--more-->
  ### 开始
 
 开始之前，还是有必要去vue官网学习一下vue，至少得有个大致的了解，后面在用到vue-router和vuex时，再去对应的仓库看文档就可以了。
