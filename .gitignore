@@ -10,3 +10,4 @@ themes/yilia/.deploy*/
 themes/yilia/*.log
 themes/yilia/.DS_Store
 themes/yilia/Thumbs.db
+themes/yilia/package-lock.json
