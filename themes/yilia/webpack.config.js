@@ -3,6 +3,7 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanPlugin = require('clean-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // 模板压缩
 // 详见：https://github.com/kangax/html-minifier#options-quick-reference
@@ -82,6 +83,7 @@ module.exports = {
       template: './source-src/css.ejs',
       filename: '../layout/_partial/css.ejs',
     }),
+    new CopyWebpackPlugin([{ from: './source-src/assert', to: './assert' }]),
   ],
   watch: false,
 };
