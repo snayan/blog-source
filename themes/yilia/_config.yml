@@ -28,7 +28,7 @@ rss: /atom.xml
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: 
+root:
 
 # Content
 
@@ -49,9 +49,9 @@ reward_type: 0
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: 
+alipay:
 # 微信二维码图片地址
-weixin: 
+weixin:
 
 # Miscellaneous
 baidu_analytics: ''
@@ -74,8 +74,8 @@ duoshuo: false
 wangyiyun: false
 
 #3、畅言
-changyan_appid: false
-changyan_conf: false
+changyan_appid: cytGCMhYC
+changyan_conf: prod_4115b792b4b45e18c214d4bbd947a0db
 
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus: false
