@@ -8,7 +8,7 @@ process.chdir(resolveTheme);
 
 console.log(process.cwd());
 
-console.log('deploying...');
+console.log('starting...');
 
 execSync('npm install && npm run dist');
 
@@ -16,4 +16,6 @@ console.log('compile themes successfully');
 
 process.chdir(cwd);
 
-execSync('npm run generate && hexo deploy');
+execSync('hexo serve');
+
+console.log('your serve start on :http://localhost:4000');

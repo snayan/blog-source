@@ -8,7 +8,7 @@
   "scripts": {
     "new": "hexo new",
     "clean": "hexo clean",
-    "serve": "hexo serve",
+    "serve": "node serve.js",
     "generate": "npm run clean && hexo generate",
     "deploy": "node deploy.js",
     "publish": "hexo publish"
