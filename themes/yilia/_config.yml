@@ -59,7 +59,7 @@ google_analytics: ''
 favicon: /assert/img/favicon.png
 
 #你的头像url
-avatar: /assert/img/my.png
+avatar: /assert/img/my.jpg
 
 #是否开启分享
 share_jia: true
