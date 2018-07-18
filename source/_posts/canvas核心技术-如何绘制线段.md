@@ -4,7 +4,7 @@ date: 2018-07-09 20:16:12
 tags: canvas
 ---
 
-这篇是学习和回顾canvas系列笔记的第一篇，完整笔记详见：[canvas核心技术](https://blog.snayan.com/2018/07/09/canvas-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/)
+这篇是学习和回顾canvas系列笔记的第一篇，完整笔记详见：[canvas核心技术](https://snayan.github.io/2018/07/09/canvas-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/)
 学习canvas，首先得知道如何去绘制线段，然后才能通过很多简单的线段去实现比较复杂的图形，比如常见的图表，柱状图，折线图等都是通过一段一段的线段实现的。
 
 #### 基础知识

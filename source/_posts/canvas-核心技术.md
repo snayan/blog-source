@@ -18,7 +18,7 @@ tags: canvas
 
 在学习过程中，最好是自己能动手实现，我就专门建了一个canvas demo的项目，里面都是自己在学习canvas时动手写的一些例子，感兴趣的可以去看看。
 项目仓库地址：https://github.com/snayan/canvas-demo
-demo预览地址：https://blog.snayan.com/canvas-demo/
+demo预览地址：https://snayan.github.io/canvas-demo/
 
 我会按照上面的主要知识点，分篇幅来学习和回顾canvas 相关的核心技术。主要如下：
 

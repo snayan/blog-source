@@ -4,11 +4,11 @@ date: 2018-07-18 08:58:15
 tags: canvas
 ---
 
-这篇学习和回顾canvas系列笔记的第二篇，完整笔记详见：[canvas核心技术](https://blog.snayan.com/2018/07/09/canvas-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/)
+这篇学习和回顾canvas系列笔记的第二篇，完整笔记详见：[canvas核心技术](https://snayan.github.io/2018/07/09/canvas-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/)
 
-通过上一篇[canvas核心技术-如何绘制线段](https://blog.snayan.com/2018/07/09/canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6%E7%BA%BF%E6%AE%B5/)的学习，我们知道了如何去绘制线段。很多的线段的拼接就组成了图形了，比如常见的三角形，矩形，圆形等。
+通过上一篇[canvas核心技术-如何绘制线段](https://snayan.github.io/2018/07/09/canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6%E7%BA%BF%E6%AE%B5/)的学习，我们知道了如何去绘制线段。很多的线段的拼接就组成了图形了，比如常见的三角形，矩形，圆形等。
 
-常见图形的绘制可以查看我的在线示例：[canvas shape](https://blog.snayan.com/canvas-demo/?module=shape)
+常见图形的绘制可以查看我的在线示例：[canvas shape](https://snayan.github.io/canvas-demo/?module=shape)
 
 示例项目仓库地址：[canvas demo](https://github.com/snayan/canvas-demo)
 
@@ -281,7 +281,7 @@ fillRule参数是可选的，可取值为`nonzero`,`evenodd`。也就是说，`f
 
 再来看看上图，为何中间交叉区域没有被填充。我们绘制了2个三角形，第一绘制顺序是p1-->p2-->p3-->p1，第二个绘制顺序是p4-->p5-->p6-->p4 。可以看到第一个三角形在绘制是逆时针方向的，第二个三角形绘制是顺时针方向的，中间相交区域的计数器最终值就为0了，所以不应该包含在这个路径中。
 
- 非零环绕规则演示可以查看我的示例：[非零环绕示例](https://blog.snayan.com/canvas-demo/?module=cutout)
+ 非零环绕规则演示可以查看我的示例：[非零环绕示例](https://snayan.github.io/canvas-demo/?module=cutout)
 
 ##### 奇偶规则
 
