@@ -360,7 +360,7 @@ ctx.transform(0.5 * cosAngle, 0.5 * sinAngle, -0.5 * sinAngle, 0.5 * cosAngle, 1
 
 这两种方式最终得到的效果是一样的，其实在将`translate`+`scale`+`rotate`组合用`transform`一次性实现时，就是在做矩阵的变换计算，
 
-![rotate2](/assert/img/canvas/5.png)
+![rotate2](/assert/img/canvas/6.png)
 
 三个矩阵相乘，分别是平移矩阵\*缩放矩阵\*旋转矩阵，根据计算出来的矩阵，最后代入到公式中，可以得到$a=0.5\*\cos(\beta)$，$b=0.5\*\sin(\beta)$，$c=-0.5\*\sin(\beta)$，$d=0.5\*\cos(\beta)$，$e=120$，$f=20$。
 
@@ -373,7 +373,7 @@ ctx.transform(cosAngle, sinAngle, -sinAngle, cosAngle, 0, 0); //使用transform�
 ```
 
 第二次调用`transform`来缩放，是在第一次平移之后的坐标系上进行的，第三次调用`transform`来旋转，是在第一次和第二次结果上来进行的。canvas中提供了`setTransform`函数，它类似于`transform`函数，同样接受a，b，c，d，e，f 6个参数，且参数含义与`transform`中一摸一样，跟`transform`不同之处在于，**它不会叠加矩阵变换的效果，它会先重置当前坐标系矩阵为默认的单元矩阵**，之后再执行跟`transform`一样的矩阵变换。所以，如果我们在调用`transform`变换矩阵时，不想多次调用叠加，那么可以替换使用`setTransform`。实际上还有一个实验性的函数`resetTransform`，它的作用就是重置当前坐标系矩阵为默认的单元矩阵，去掉了作用在默认坐标系上的变换效果，注意它是一个实验性的函数，还有很多浏览器都没有提供支持，不建议使用。通过分析，我们可以得到，
-![rotate2](/assert/img/canvas/6.png)
+![rotate2](/assert/img/canvas/7.png)
 
 #### 小结
 
