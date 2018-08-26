@@ -22,7 +22,7 @@ tags: canvas
       ball.offset += distance;
     }
 ```
-
+<!--more-->
 [这里是我的小球自由落体完整在线示例](https://snayan.github.io/canvas-demo/?module=free_fall)
 
 这种检测方式非常的简单且准确，在针对类似业务开发时，我们可以简化成边界值检测。但是当我们开发较为复杂游戏时，边界值检测通常不能很好的实现，为了更加真实，它通常与其他检测方法一起使用。
