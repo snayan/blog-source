@@ -1,0 +1,22 @@
+body {
+  --bg: #fff;
+  --header: var(--pink);
+  --textNormal: #444;
+  --textTitle: #222;
+  --textLink: #076dd0;
+  --hr: rgba(0, 0, 0, 0.2);
+  --inlineCode-bg: rgba(255, 229, 100, 0.2);
+  --inlineCode-text: #1a1a1a;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  --bg: #282c35;
+  --header: #fff;
+  --textNormal: hsla(0, 22%, 5%, 0.88);
+  --textTitle: #fff;
+  --textLink: var(--pink);
+  --hr: hsla(0, 0%, 100%, 0.2);
+  --inlineCode-bg: #373c49;
+  --inlineCode-text: #e6e6e6;
+}
