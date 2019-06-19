@@ -1,0 +1,74 @@
+.bio {
+  padding: 2.5em;
+}
+
+.avatar {
+  width: 75px;
+  height: 75px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author h1 {
+  margin-left: 0.75em;
+  margin-top: 0;
+}
+
+.belief {
+  color: var(--textGray);
+  margin-top: 2em;
+  /* margin-left: 0.2em; */
+}
+
+.menu ul {
+  list-style: none;
+  margin-left: 0.4em;
+}
+
+.menu a {
+  color: var(--textNormal);
+  font-size: 1.12em;
+}
+
+.menu a:hover {
+  color: var(--textLink);
+}
+
+.contacts {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.contacts ul {
+  list-style: none;
+  margin: 0 0 0 -0.5em;
+  display: flex;
+}
+
+.contacts li {
+  padding: 0;
+  margin: 0 0.5em;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  cursor: pointer;
+}
+
+.contacts a {
+  display: flex;
+  color: var(--textNormal);
+}
+
+.contacts a:hover {
+  color: var(--textLink);
+  border: none;
+}

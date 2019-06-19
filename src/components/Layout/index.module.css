@@ -1,0 +1,19 @@
+.layout {
+  max-width: 66.875em;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.aside {
+  float: left;
+  width: 33.3%;
+}
+
+.main {
+  float: left;
+  width: 66.6%;
+}
+
+.main > div {
+  padding: 2.5rem 2.1875rem;
+}

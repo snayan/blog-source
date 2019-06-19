@@ -1,11 +1,31 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
+    title: `三洋的小站`,
+    author: `三洋`,
+    belief: "愿你出走半生，归来仍是少年",
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    menu: {
+      home: {
+        name: "首页",
+        link: "",
+      },
+      archive: {
+        name: "归档",
+        link: "",
+      },
+      note: {
+        name: "随记",
+        link: "",
+      },
+      about: {
+        name: "关于",
+        link: "",
+      },
+    },
     social: {
-      twitter: `kylemathews`,
+      github: '',
+      email: `kylemathews`
     },
   },
   plugins: [
@@ -67,6 +87,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
   ],
 }
