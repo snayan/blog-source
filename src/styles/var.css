@@ -1,11 +1,12 @@
 body {
   --bg: #fff;
-  --header: var(--pink);
+  --header: #222;
   --textNormal: #222;
   --textTitle: #222;
   --textLink: #5d93ff;
   --textGray: #888;
-  --hr: rgba(0, 0, 0, 0.2);
+  --borderLine: #e6e6e6;
+  --waring: #ffffc0;
   --inlineCode-bg: rgba(255, 229, 100, 0.2);
   --inlineCode-text: #1a1a1a;
 }
@@ -17,7 +18,8 @@ body.dark {
   --textTitle: #fff;
   --textLink: #5d93ff;
   --textGray: #888;
-  --hr: hsla(0, 0%, 100%, 0.2);
+  --borderLine: #e6e6e6;
+  --waring: #ffffc0;
   --inlineCode-bg: #373c49;
   --inlineCode-text: #e6e6e6;
 }

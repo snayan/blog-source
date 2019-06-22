@@ -1,0 +1,57 @@
+.article {
+  padding: 2em 0;
+  position: relative;
+}
+
+.article::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--borderLine);
+  background: -webkit-gradient(linear,right bottom, left top,from(var(--borderLine)),to(#fff));
+  background: linear-gradient(-90deg,var(--borderLine),#fff);
+}
+
+.article:first-child {
+  margin-top: -2em;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.header h2 {
+  margin-bottom: 0;
+}
+.header a {
+  color: var(--header);
+  transition: 0.3s;
+}
+.header a:hover {
+  border: none;
+  color: var(--textLink);
+  opacity: 0.8;
+}
+
+.header small {
+  color: var(--textGray);
+}
+
+@media (max-width: 900px) {
+  .article::after {
+    background: var(--borderLine);
+  }
+}
+
+@media (min-width: 600px) {
+  .header small {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}

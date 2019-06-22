@@ -1,9 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import styles from "./index.module.css"
 
 class BlogIndex extends React.Component {
   render() {
@@ -17,22 +16,20 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
+            <article className={styles.article} key={node.fields.slug}>
+              <div className={styles.header}>
+                <h2 >
+                  <Link to={node.fields.slug}>{title}</Link>
+                </h2>
+                <small>{node.frontmatter.date}</small>
+              </div>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.excerpt,
                 }}
               />
-            </div>
+              <Link to={node.fields.slug}>继续阅读 »</Link>
+            </article>
           )
         })}
       </Layout>

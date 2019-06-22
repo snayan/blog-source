@@ -33,18 +33,18 @@ a:hover {
 }
 
 p {
-  margin: 1em 0 0;
+  margin: 0 0 1em;
 }
 
 
 ul, ol {
   padding: 0;
-  margin: 1em 0 0 1.7em;
+  margin: 0 0 1em 1.7em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Dosis", "Helvetica Neue", "Arial", "Verdana", "Songti SC", "STSong", "SimSun", serif;
-  margin: 1em 0 0;
+  margin: 0 0 1em;
 }
 
 table {
@@ -82,4 +82,28 @@ table tr td:first-child {
 
 footer {
   color: var(--textGray);
+}
+
+@media (max-width: 640px) {
+  table {
+    position: relative;
+    background: var(--waring);
+    margin: 0 auto;
+    border: 1px solid var(--borderLine);
+    height: 40px;
+  }
+  thead, tbody {
+    display: none;
+  }
+  table::after {
+    content: '无法显示表格，请使用PC浏览';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 100%;
+    font-size: 0.8em;
+    line-height: 40px;
+    text-align: center;
+    transform: translateX(-50%);
+  }
 }

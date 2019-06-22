@@ -14,7 +14,7 @@
 
 .author h1 {
   margin-left: 0.75em;
-  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .belief {
@@ -31,6 +31,7 @@
 .menu a {
   color: var(--textNormal);
   font-size: 1.12em;
+  transition: color 0.3s;
 }
 
 .menu a:hover {
@@ -52,14 +53,13 @@
   padding: 0;
   margin: 0 0.5em;
   display: flex;
-  align-content: center;
   align-items: center;
   justify-content: center;
   height: 35px;
   width: 35px;
   border-radius: 50%;
   text-align: center;
-  border: 1px solid #ebebeb;
+  border: 1px solid var(--borderLine);
   cursor: pointer;
 }
 
