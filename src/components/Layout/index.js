@@ -2,10 +2,17 @@ import React from "react"
 import { Link } from "gatsby"
 import Bio from "../Bio"
 import Slider from "../Slider"
+import SEO from '../SEO'
 import styles from "./index.module.css"
 
 class Layout extends React.Component {
   state = { opened: false }
+
+  get isHomePage() {
+    const { location } = this.props
+    const rootPath = `${__PATH_PREFIX__}/`
+    return location.pathname === rootPath
+  }
 
   toggleOpenSlider = () => {
     this.setState(preState => {
@@ -14,19 +21,13 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { location, title, children } = this.props
+    const { location, title, description, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
 
     return (
-      <div className={`${styles.layout} ${this.state.opened && styles.opened}`}>
-        <aside className={styles.aside}>
-          <Bio />
-        </aside>
-        <main className={styles.main}>
-          <div className={styles.content}>{children}</div>
-          <div className={styles.overlay}></div>
-          <Slider onClick={this.toggleOpenSlider} opened={this.state.opened} />
-        </main>
+      <div className={styles.layout}>
+        <SEO title={title} description={description} />
+        {children}
       </div>
     )
   }

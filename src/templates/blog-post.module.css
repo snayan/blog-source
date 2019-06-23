@@ -1,0 +1,50 @@
+.author {
+  display: flex;
+  align-items: center;
+  padding: 2.5em 2.1875em 0;
+}
+
+.siteTitle {
+  opacity: 0.5;
+  margin: 0 0 0 0.5em;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  color: var(--textTitle);
+}
+
+.author a:hover {
+  border: none;
+}
+
+.siteTitle:hover {
+  opacity: 1;
+  border: none;
+}
+
+.article {
+  padding: 2.5em 2.1875em;
+}
+
+.article small {
+  color: var(--textGray);
+  margin-bottom: 25px;
+  display: block;
+}
+
+.articleTitle {
+  margin: 0;
+}
+
+.footerNav {
+  margin: 0;
+  overflow: hidden;
+}
+
+.previous {
+  float: left;
+}
+
+.next {
+  float: right;
+}
+

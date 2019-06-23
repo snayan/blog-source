@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Bio from "../components/Bio"
 import styles from "./index.module.css"
 
 class BlogIndex extends React.Component {
@@ -12,26 +12,30 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <article className={styles.article} key={node.fields.slug}>
-              <div className={styles.header}>
-                <h2 >
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h2>
-                <small>{node.frontmatter.date}</small>
-              </div>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.excerpt,
-                }}
-              />
-              <Link to={node.fields.slug}>继续阅读 »</Link>
-            </article>
-          )
-        })}
+        <aside className={styles.aside}>
+          <Bio />
+        </aside>
+        <main className={styles.main}>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <article className={styles.article} key={node.fields.slug}>
+                <div className={styles.header}>
+                  <h2>
+                    <Link to={node.fields.slug}>{title}</Link>
+                  </h2>
+                  <small>{node.frontmatter.date}</small>
+                </div>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.excerpt,
+                  }}
+                />
+                <Link to={node.fields.slug}>继续阅读 »</Link>
+              </article>
+            )
+          })}
+        </main>
       </Layout>
     )
   }

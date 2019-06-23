@@ -1,60 +1,63 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/Bio"
+import Image from "gatsby-image"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import styles from "./blog-post.module.css"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+    const author = this.props.data.site.siteMetadata.author
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.excerpt}
-        />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            display: `block`,
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-          }}
-        />
+      <Layout
+        location={this.props.location}
+        title={post.frontmatter.title}
+        description={post.excerpt}
+      >
+        <div className={styles.author}>
+          <Image
+            fixed={this.props.data.avatar.childImageSharp.fixed}
+            alt={author}
+            style={{
+              width: 40,
+              height: 40,
+              display: "block",
+              opacity: 0.5,
+            }}
+            imgStyle={{
+              borderRadius: `50%`,
+            }}
+          />
+          <Link to="/">
+            <h2 className={styles.siteTitle}>{siteTitle}</h2>
+          </Link>
+        </div>
+        <article className={styles.article}>
+          <h1 className={styles.articleTitle}>{post.frontmatter.title}</h1>
+          <small>{post.frontmatter.date}</small>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr style={{}} />
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
+          <nav className={styles.footerNav}>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link
+                className={styles.previous}
+                to={previous.fields.slug}
+                rel="prev"
+              >
+                « {previous.frontmatter.title}
               </Link>
             )}
-          </li>
-          <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link className={styles.next} to={next.fields.slug} rel="next">
+                {next.frontmatter.title} »
               </Link>
             )}
-          </li>
-        </ul>
+          </nav>
+        </article>
       </Layout>
     )
   }
@@ -64,6 +67,13 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
+    avatar: file(absolutePath: { regex: "/my.jpg/" }) {
+      childImageSharp {
+        fixed(width: 40, height: 40) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title
