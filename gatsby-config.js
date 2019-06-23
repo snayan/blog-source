@@ -14,9 +14,9 @@ module.exports = {
         name: "归档",
         link: "/archives",
       },
-      note: {
-        name: "随记",
-        link: "/notes",
+      search: {
+        name: "搜索",
+        link: "/search",
       },
       about: {
         name: "关于",

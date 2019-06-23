@@ -97,7 +97,7 @@ const bioQuery = graphql`
             name
             link
           }
-          note {
+          search {
             name
             link
           }
