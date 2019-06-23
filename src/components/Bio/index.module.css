@@ -1,31 +1,32 @@
-.bio {
-  /* padding: 2.5em; */
-}
-
-.avatar {
-  width: 75px;
-  height: 75px;
-}
-
 .author {
   display: flex;
   align-items: center;
 }
 
-.author h1 {
+.info {
+  display: flex;
   margin-left: 0.75em;
+  flex-direction: column;
+}
+
+.name {
   margin-bottom: 0;
 }
 
 .belief {
   color: var(--textGray);
   margin-top: 2em;
-  /* margin-left: 0.2em; */
 }
 
-.menu ul {
-  list-style: none;
-  margin-left: 0.4em;
+.beliefMobile {
+  display: none;
+  color: var(--textGray);
+  margin-bottom: 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
 }
 
 .menu a {
@@ -39,17 +40,11 @@
 }
 
 .contacts {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.contacts ul {
-  list-style: none;
-  margin: 0 0 0 -0.5em;
   display: flex;
+  margin: 1em -0.5em;
 }
 
-.contacts li {
+.contacts div {
   padding: 0;
   margin: 0 0.5em;
   display: flex;
@@ -71,4 +66,47 @@
 .contacts a:hover {
   color: var(--textLink);
   border: none;
+}
+
+@media (max-width: 767px) {
+  .author {
+    margin-bottom: 1em;
+  }
+  .avatar {
+    transform: scale(0.6) translate(-14px, -14px);
+  }
+  .info {
+    width: 100%;
+    margin-left: -70px;
+    justify-content: center;
+    align-items: center;
+  }
+  .belief {
+    display: none;
+  }
+  .beliefMobile {
+    display: block;
+    color: var(--mobile-aside-text);
+  }
+  .menu {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .menu a {
+    margin: 0 1em;
+    color: var(--mobile-aside-text);
+  }
+  .contacts {
+    justify-content: center;
+  }
+  .contacts a {
+    color: var(--mobile-aside-text);
+  }
+  .footer {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

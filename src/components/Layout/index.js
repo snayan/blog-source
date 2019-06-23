@@ -1,7 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-import Bio from "../Bio"
-import Slider from "../Slider"
 import SEO from '../SEO'
 import styles from "./index.module.css"
 
@@ -21,8 +18,8 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { location, title, description, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+    const { title, description, children } = this.props
+    // const rootPath = `${__PATH_PREFIX__}/`
 
     return (
       <div className={styles.layout}>

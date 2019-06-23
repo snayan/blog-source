@@ -7,19 +7,10 @@ body {
   --textGray: #888;
   --borderLine: #e6e6e6;
   --waring: #ffffc0;
-  --inlineCode-bg: rgba(255, 229, 100, 0.2);
-  --inlineCode-text: #1a1a1a;
+  --mobile-aside-bg: #007b8b;
+  --mobile-aside-text: #ffffff;
 }
 
 body.dark {
-  --bg: #282c35;
-  --header: #fff;
-  --textNormal: hsla(0, 22%, 5%, 0.88);
-  --textTitle: #fff;
-  --textLink: #5d93ff;
-  --textGray: #888;
-  --borderLine: #e6e6e6;
-  --waring: #ffffc0;
-  --inlineCode-bg: #373c49;
-  --inlineCode-text: #e6e6e6;
+
 }

@@ -2,6 +2,7 @@
   float: left;
   padding: 2.5em 2.1875em;
   position: relative;
+  box-sizing: border-box;
 }
 
 .aside::after {
@@ -66,17 +67,22 @@
   color: var(--textGray);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
+  .aside {
+    width: 100%;
+    padding: 1.8em 1em 1em;
+    float: none;
+    background: var(--mobile-aside-bg);
+    color: var(--mobile-aside-text);
+  }
+  .aside::after {
+    display: none;
+  }
+  .main {
+    padding: 1em;
+    height: fit-content;
+  }
   .article::after {
     background: var(--borderLine);
-  }
-}
-
-@media (min-width: 600px) {
-  .header small {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
   }
 }

@@ -26,6 +26,7 @@ code {
 a {
   color: var(--textLink);
   text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 
 a:hover {
@@ -105,7 +106,7 @@ footer {
   border: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   table {
     position: relative;
     background: var(--waring);

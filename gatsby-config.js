@@ -8,24 +8,24 @@ module.exports = {
     menu: {
       home: {
         name: "首页",
-        link: "",
+        link: "/",
       },
       archive: {
         name: "归档",
-        link: "",
+        link: "/archives",
       },
       note: {
         name: "随记",
-        link: "",
+        link: "/notes",
       },
       about: {
         name: "关于",
-        link: "",
+        link: "/about",
       },
     },
     social: {
-      github: '',
-      email: `kylemathews`
+      github: 'https://github.com/snayan',
+      email: `mailto:snayan@sina.com`
     },
   },
   plugins: [
