@@ -5,6 +5,7 @@ module.exports = {
     belief: "愿你出走半生，归来仍是少年",
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    postPath: '/post',
     menu: {
       home: {
         name: "首页",
