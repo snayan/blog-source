@@ -102,8 +102,16 @@ footer {
   margin: 1em 0;
 }
 
+.gatsby-resp-image-link {
+  border: none;
+}
+
 .gatsby-resp-image-link:hover {
   border: none;
+}
+
+.katex-display>.katex {
+  overflow: auto;
 }
 
 @media (max-width: 767px) {

@@ -4219,6 +4219,14 @@ gatsby-remark-images@^3.0.14:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.0.1"
 
+gatsby-remark-katex@^3.1.0:
+  version "3.1.0"
+  resolved "https://npm.garenanow.com/gatsby-remark-katex/-/gatsby-remark-katex-3.1.0.tgz#b922d368c167e2d121d37920d0bd324b30d79286"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    remark-math "^1.0.3"
+    unist-util-visit "^1.3.0"
+
 gatsby-remark-prismjs@^3.2.11:
   version "3.2.11"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.2.11.tgz#94407a1d78233b7be0261b8608bdae2a01c98ce6"
@@ -4286,9 +4294,9 @@ gatsby-telemetry@^1.0.11:
     stack-utils "1.0.2"
     uuid "3.3.2"
 
-gatsby-transformer-remark@^2.3.12:
-  version "2.3.12"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.3.12.tgz#04ba4497a0f779582b19ad7c55d373609beaefeb"
+gatsby-transformer-remark@^2.5.0:
+  version "2.5.0"
+  resolved "https://npm.garenanow.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.5.0.tgz#ea394d5b158874213f1ea2dc0530377e6138ec1f"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -5934,6 +5942,12 @@ jsx-ast-utils@^2.0.1, jsx-ast-utils@^2.1.0:
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.1.0.tgz#0ee4e2c971fb9601c67b5641b71be80faecf0b36"
   dependencies:
     array-includes "^3.0.3"
+
+katex@^0.10.2:
+  version "0.10.2"
+  resolved "https://npm.garenanow.com/katex/-/katex-0.10.2.tgz#39973edbb65eda5b6f9e7f41648781e557dd4932"
+  dependencies:
+    commander "^2.19.0"
 
 kebab-hash@^0.1.2:
   version "0.1.2"
@@ -8405,6 +8419,12 @@ relay-runtime@2.0.0:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
 
+remark-math@^1.0.3:
+  version "1.0.6"
+  resolved "https://npm.garenanow.com/remark-math/-/remark-math-1.0.6.tgz#49eb3dd15d298734c9ae21673115389793af4d1b"
+  dependencies:
+    trim-trailing-lines "^1.1.0"
+
 remark-parse@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/remark-parse/-/remark-parse-5.0.0.tgz#4c077f9e499044d1d5c13f80d7a98cf7b9285d95"
@@ -9726,6 +9746,10 @@ trim-right@^1.0.1:
 trim-trailing-lines@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/trim-trailing-lines/-/trim-trailing-lines-1.1.1.tgz#e0ec0810fd3c3f1730516b45f49083caaf2774d9"
+
+trim-trailing-lines@^1.1.0:
+  version "1.1.2"
+  resolved "https://npm.garenanow.com/trim-trailing-lines/-/trim-trailing-lines-1.1.2.tgz#d2f1e153161152e9f02fabc670fb40bec2ea2e3a"
 
 trim@0.0.1:
   version "0.0.1"

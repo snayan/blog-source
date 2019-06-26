@@ -13,7 +13,7 @@
 }
 
 .author a:hover {
-  border: none;
+  border-color: transparent;
 }
 
 .siteTitle:hover {
