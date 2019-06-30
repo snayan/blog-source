@@ -1,16 +1,29 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Page from "../components/Page"
+import Pagination from "../components/Pagination"
+import { getQuery } from "../utils"
 import styles from "./index.module.css"
 
 class BlogIndex extends React.Component {
+  getPn() {
+    let pn = Number(getQuery("pn"))
+    return pn < 0 ? 0 : pn
+  }
+
   render() {
+    const pn = this.getPn()
     const { data } = this.props
+    const postLimit = data.site.siteMetadata.postLimit
     const posts = data.allMarkdownRemark.edges
+    const totalCount = data.allMarkdownRemark.totalCount
+    const start = pn * postLimit
+    const end = start + postLimit
+    const renderPosts = posts.slice(start, end)
 
     return (
       <Page location={this.props.location} title="首页">
-        {posts.map(({ node }) => {
+        {renderPosts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article className={styles.article} key={node.fields.slug}>
@@ -29,6 +42,7 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
+        <Pagination total={totalCount} pn={pn} />
       </Page>
     )
   }
@@ -41,9 +55,11 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        postLimit
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
       edges {
         node {
           excerpt

@@ -1,0 +1,12 @@
+.footerNav {
+  padding: 1em 0;
+  text-align: center;
+}
+
+.previous {
+  float: left;
+}
+
+.next {
+  float: right;
+}

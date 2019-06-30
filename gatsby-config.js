@@ -3,9 +3,10 @@ module.exports = {
     title: `三洋的小站`,
     author: `三洋`,
     belief: "愿你出走半生，归来仍是少年",
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `三洋的小站，记录前端相关知识，思考与总结`,
+    siteUrl: `https://snayan.github.io/`,
     postPath: '/post',
+    postLimit: 10,
     menu: {
       home: {
         name: "首页",
