@@ -32,7 +32,7 @@
   transition: 0.3s;
 }
 .header a:hover {
-  border: none;
+  border-color: transparent;
   color: var(--textLink);
   opacity: 0.8;
 }
