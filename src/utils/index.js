@@ -31,12 +31,14 @@ export const getIcon = name => {
 }
 
 export const getQuery = name => {
-  const url = window.location.href
-  const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)")
-  const results = regex.exec(url)
-  if (!results) return null
-  if (!results[2]) return ""
-  return decodeURIComponent(results[2].replace(/\+/g, " "))
+  if (typeof window !== 'undefined') {
+    const url = window.location.href
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)")
+    const results = regex.exec(url)
+    if (!results) return null
+    if (!results[2]) return ""
+    return decodeURIComponent(results[2].replace(/\+/g, " "))
+  }
 }
 
 export const getSearchLink = (link, query) => {
