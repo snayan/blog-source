@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `三洋的小站`,
-    author: `三洋`,
+    title: `三羊的小站`,
+    author: `三羊`,
     belief: "愿你出走半生，归来仍是少年",
-    description: `三洋的小站，记录前端相关知识，思考与总结`,
+    description: `三羊的小站，记录前端相关知识，思考与总结`,
     siteUrl: `https://snayan.github.io/`,
     postPath: "/post",
     postLimit: 10,

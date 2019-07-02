@@ -7,7 +7,7 @@ class About extends React.Component {
       <Page location={this.props.location} title="关于">
         <h1>关于</h1>
         <main>
-          <p>朋友，你好，欢迎来到三洋的小站。</p>
+          <p>朋友，你好，欢迎来到三羊的小站。</p>
           <p>
             这个小站主要是博主记录自己在学习中的总结，以及对生活的思考。站内所有文章均是博主原创，仅代表个人想法，与其他任何组织或单位无关。
           </p>
