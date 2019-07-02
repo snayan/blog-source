@@ -17,7 +17,7 @@ class Archives extends React.Component {
     }, {})
 
     return (
-      <Page location={this.props.location} title="首页">
+      <Page location={this.props.location} title="归档">
         <h1>文章归档</h1>
         {Object.keys(content)
           .sort((a, b) => b - a)

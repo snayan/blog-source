@@ -20,7 +20,7 @@
 .main {
   overflow: auto;
   height: 100vh;
-  padding: 2.5em 2.1875em;
+  padding: 2.5em 2.1875em 0;
   box-sizing: border-box;
 }
 

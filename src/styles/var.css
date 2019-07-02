@@ -1,10 +1,10 @@
 body {
   --bg: #fff;
-  --header: #222;
-  --textNormal: #222;
-  --textTitle: #222;
-  --textLink: #5d93ff;
-  --textGray: #888;
+  --header: #333;
+  --textNormal: #444;
+  --textTitle: #444;
+  --textLink: #076dd0;
+  --textGray: #555;
   --borderLine: #e6e6e6;
   --waring: #ffffc0;
   --mobile-aside-bg: #007b8b;

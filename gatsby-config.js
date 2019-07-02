@@ -5,7 +5,7 @@ module.exports = {
     belief: "愿你出走半生，归来仍是少年",
     description: `三洋的小站，记录前端相关知识，思考与总结`,
     siteUrl: `https://snayan.github.io/`,
-    postPath: '/post',
+    postPath: "/post",
     postLimit: 10,
     menu: {
       home: {
@@ -26,8 +26,8 @@ module.exports = {
       },
     },
     social: {
-      github: 'https://github.com/snayan',
-      email: `mailto:snayan@sina.com`
+      github: "https://github.com/snayan",
+      email: `mailto:snayan@sina.com`,
     },
   },
   plugins: [
@@ -65,8 +65,8 @@ module.exports = {
             resolve: `gatsby-remark-katex`,
             options: {
               // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
-            }
+              strict: `ignore`,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -93,6 +93,22 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/my.png`,
+      },
+    },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `tags`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            date: node => node.frontmatter.date
+          },
+        },
       },
     },
     `gatsby-plugin-offline`,
