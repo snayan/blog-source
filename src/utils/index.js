@@ -38,3 +38,7 @@ export const getQuery = name => {
   if (!results[2]) return ""
   return decodeURIComponent(results[2].replace(/\+/g, " "))
 }
+
+export const getSearchLink = (link, query) => {
+  return link + "?query=" + query
+}

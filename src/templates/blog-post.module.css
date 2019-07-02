@@ -48,6 +48,10 @@
   float: right;
 }
 
+.tags {
+  margin-left: 1em;
+}
+
 @media (max-width: 767px) {
   .author {
     padding: 1.5em 1em 1em;

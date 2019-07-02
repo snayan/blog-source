@@ -3,13 +3,12 @@ import { Index } from "elasticlunr"
 import { Link, graphql } from "gatsby"
 import Page from "../../components/Page"
 import styles from "./index.module.css"
-import { getQuery } from "../../utils"
+import { getQuery, getSearchLink } from "../../utils"
 
 class Search extends React.Component {
   constructor(props) {
     super(props)
     this.index = Index.load(props.data.siteSearchIndex.index)
-    this.tagLink = props.data.site.siteMetadata.menu.search.link
     this.formatPosts(props)
     this.state = {
       query: getQuery("query") || "",
@@ -39,12 +38,12 @@ class Search extends React.Component {
     this.tags = tags
   }
 
-  change = e => {
+  inputChange = e => {
     const query = e.target.value
     this.setState({ query })
   }
 
-  query = () => {
+  doQuery = () => {
     if (!this.state.query) {
       return
     }
@@ -57,10 +56,11 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    this.query()
+    this.doQuery()
   }
 
   render() {
+    const searchLink = this.props.data.site.siteMetadata.menu.search.link
     const results = this.state.results
     let content = null
     if (this.state.clicked && !results.length) {
@@ -101,10 +101,10 @@ class Search extends React.Component {
               className={styles.searchInput}
               type="text"
               value={this.state.query}
-              onChange={this.change}
+              onChange={this.inputChange}
               placeholder="请输入关键词..."
             />
-            <button className={styles.searchBtn} onClick={this.query}>
+            <button className={styles.searchBtn} onClick={this.doQuery}>
               搜索
             </button>
           </div>
@@ -118,7 +118,7 @@ class Search extends React.Component {
             <span>标签：</span>
             {Object.keys(this.tags).map(tag => {
               return (
-                <a key={tag} href={`${this.tagLink}?query=${tag}`}>
+                <a key={tag} href={getSearchLink(searchLink, tag)}>
                   <span className={styles.tag} key={tag}>
                     {tag}
                   </span>

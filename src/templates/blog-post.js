@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/Layout"
+import { getSearchLink } from "../utils"
 import styles from "./blog-post.module.css"
 
 class BlogPostTemplate extends React.Component {
@@ -10,6 +11,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const author = this.props.data.site.siteMetadata.author
     const { previous, next } = this.props.pageContext
+    const searchLink = this.props.data.site.siteMetadata.menu.search.link
 
     return (
       <Layout
@@ -37,7 +39,19 @@ class BlogPostTemplate extends React.Component {
         </div>
         <article className={styles.article}>
           <h1 className={styles.articleTitle}>{post.frontmatter.title}</h1>
-          <small>{post.frontmatter.date}</small>
+          <small>
+            <span>{post.frontmatter.date}</span>
+            <span className={styles.tags}>
+              「{" "}
+              {post.frontmatter.tags.map((tag, index) => (
+                <React.Fragment key={tag}>
+                  <Link to={getSearchLink(searchLink, tag)}>{tag}</Link>
+                  {index !== post.frontmatter.tags.length - 1 && " 、"}
+                </React.Fragment>
+              ))}{" "}
+              」
+            </span>
+          </small>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr style={{}} />
 
@@ -78,6 +92,12 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        menu {
+          search {
+            name
+            link
+          }
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -87,6 +107,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

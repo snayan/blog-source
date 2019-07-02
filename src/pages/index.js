@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Page from "../components/Page"
 import Pagination from "../components/Pagination"
-import { getQuery } from "../utils"
+import { getQuery, getSearchLink } from "../utils"
 import styles from "./index.module.css"
 
 class BlogIndex extends React.Component {
@@ -20,18 +20,32 @@ class BlogIndex extends React.Component {
     const start = pn * postLimit
     const end = start + postLimit
     const renderPosts = posts.slice(start, end)
+    const searchLink = this.props.data.site.siteMetadata.menu.search.link
 
     return (
       <Page location={this.props.location} title="首页">
         {renderPosts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+          const tags = node.frontmatter.tags
           return (
             <article className={styles.article} key={node.fields.slug}>
               <div className={styles.header}>
-                <h2>
+                <h2 className={styles.title}>
                   <Link to={node.fields.slug}>{title}</Link>
                 </h2>
-                <small>{node.frontmatter.date}</small>
+                <small>
+                  <span>{node.frontmatter.date}</span>
+                  <span className={styles.tags}>
+                    「{" "}
+                    {tags.map((tag, index) => (
+                      <React.Fragment key={tag}>
+                        <Link to={getSearchLink(searchLink, tag)}>{tag}</Link>
+                        {index !== tags.length - 1 && " 、"}
+                      </React.Fragment>
+                    ))}{" "}
+                    」
+                  </span>
+                </small>
               </div>
               <p
                 dangerouslySetInnerHTML={{
@@ -56,6 +70,12 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         postLimit
+        menu {
+          search {
+            name
+            link
+          }
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -69,6 +89,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
           }
         }
       }

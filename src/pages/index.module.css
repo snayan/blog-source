@@ -4,15 +4,21 @@
 }
 
 .article::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 1px;
   left: 0;
   right: 0;
   bottom: 0;
   background: var(--borderLine);
-  background: -webkit-gradient(linear,right bottom, left top,from(var(--borderLine)),to(#fff));
-  background: linear-gradient(-90deg,var(--borderLine),#fff);
+  background: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(var(--borderLine)),
+    to(#fff)
+  );
+  background: linear-gradient(-90deg, var(--borderLine), #fff);
 }
 
 .article:first-child {
@@ -27,11 +33,13 @@
 .header h2 {
   margin-bottom: 0;
 }
-.header a {
+
+.title {
   color: var(--header);
   transition: 0.3s;
 }
-.header a:hover {
+
+.title:hover {
   border-color: transparent;
   color: var(--textLink);
   opacity: 0.8;
@@ -39,6 +47,10 @@
 
 .header small {
   color: var(--textGray);
+}
+
+.tags {
+  margin-left: 1em;
 }
 
 @media (max-width: 767px) {
