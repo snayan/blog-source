@@ -139,7 +139,7 @@ function fetchUserData(type, userData, fromStart = true) {
 
 去掉了 zIndex 之后，现在页面的帧率平均是 10fps，绘制一帧需要花费的平均时间是 100ms 了。在 Composite Layers 阶段花费的时间基本是 9ms 左右了。显然是有所提升的。
 
-#### 避免在 onDraw 里访问 offsetWidth 等触发 reflow
+### 避免在 onDraw 里访问 offsetWidth 等触发 reflow
 
 由于在拖拽地图时，google map 会不停的调用我们实现的 onDraw 方法。在 onDraw 方法里，可以随意设置当前 OverlayView 对象的样式和位置。未优化之前，是根据当前容器 div 的宽高和当前经纬度换算出来的坐标计算得到当前 OverlayView 对象的 left 和 top。
 
