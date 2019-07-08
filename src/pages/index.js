@@ -49,7 +49,7 @@ class BlogIndex extends React.Component {
               </div>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.excerpt,
+                  __html: node.excerpt
                 }}
               />
               <Link to={node.fields.slug}>继续阅读 »</Link>
@@ -82,7 +82,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt
+          excerpt(truncate: true)
           fields {
             slug
           }
