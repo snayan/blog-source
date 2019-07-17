@@ -1,3 +1,7 @@
+.post {
+  max-width: 800px;
+  margin: auto;
+}
 .author {
   display: flex;
   align-items: center;

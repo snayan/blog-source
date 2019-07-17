@@ -1,3 +1,8 @@
+.bio {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1em;
+}
 .author {
   display: flex;
   align-items: center;
@@ -69,6 +74,9 @@
 }
 
 @media (max-width: 767px) {
+  .bio {
+    position: static;
+  }
   .author {
     margin-bottom: 1em;
   }

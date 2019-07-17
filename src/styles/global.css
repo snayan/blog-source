@@ -8,6 +8,9 @@ body {
   font: 16px/1.8 "Open Sans", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
   color: var(--textNormal);
   background-color: var(--bg);
+  /* background-image: url(../../content/assets/gradient.png);
+  background-repeat: repeat-x;
+  background-position: 0px 0px; */
   word-spacing: 0.2em;
   word-break: break-word;
   word-wrap: break-word;
@@ -104,10 +107,6 @@ table tr td:first-child {
 
 footer {
   color: var(--textGray);
-}
-
-.gatsby-highlight {
-  margin: 1em 0;
 }
 
 .gatsby-resp-image-link {

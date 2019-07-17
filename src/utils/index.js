@@ -31,7 +31,7 @@ export const getIcon = name => {
 }
 
 export const getQuery = name => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     const url = window.location.href
     const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)")
     const results = regex.exec(url)
@@ -43,4 +43,21 @@ export const getQuery = name => {
 
 export const getSearchLink = (link, query) => {
   return link + "?query=" + query
+}
+
+export function throttle(func, interval) {
+  let isThrottling = false
+
+  return function() {
+    const context = this
+
+    if (!isThrottling) {
+      func.apply(context, arguments)
+      isThrottling = true
+
+      setTimeout(() => {
+        isThrottling = false
+      }, interval)
+    }
+  }
 }

@@ -22,7 +22,7 @@ function Bio() {
         const socialItems = Object.keys(social)
 
         return (
-          <div>
+          <div className={styles.bio}>
             <div className={styles.author}>
               <Image
                 fixed={data.avatar.childImageSharp.fixed}
