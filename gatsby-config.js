@@ -5,6 +5,7 @@ module.exports = {
     belief: "愿你出走半生，归来仍是少年",
     description: `三羊的小站，记录前端相关知识，思考与总结`,
     siteUrl: `https://snayan.github.io/`,
+    contentUrl: `https://github.com/snayan/blog-source/tree/master/content/blog`,
     postPath: "/post",
     postLimit: 10,
     menu: {

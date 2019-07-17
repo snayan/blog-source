@@ -56,6 +56,10 @@
   margin-left: 1em;
 }
 
+.editMd {
+  margin-left: 1em;
+}
+
 @media (max-width: 767px) {
   .author {
     padding: 1.5em 1em 1em;

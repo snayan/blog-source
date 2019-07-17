@@ -10,7 +10,9 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const author = this.props.data.site.siteMetadata.author
-    const { previous, next } = this.props.pageContext
+    const contentUrl = this.props.data.site.siteMetadata.contentUrl
+    const postPath = this.props.data.site.siteMetadata.postPath
+    const { previous, next, slug } = this.props.pageContext
     const searchLink = this.props.data.site.siteMetadata.menu.search.link
 
     return (
@@ -43,7 +45,7 @@ class BlogPostTemplate extends React.Component {
             <small>
               <span>{post.frontmatter.date}</span>
               <span className={styles.tags}>
-                「{" "}
+                /「{" "}
                 {post.frontmatter.tags.map((tag, index) => (
                   <React.Fragment key={tag}>
                     <Link to={getSearchLink(searchLink, tag)}>{tag}</Link>
@@ -51,6 +53,9 @@ class BlogPostTemplate extends React.Component {
                   </React.Fragment>
                 ))}{" "}
                 」
+              </span>
+              <span className={styles.editMd}>
+                / <a href={contentUrl + slug.replace(postPath, '')}>Edit on Github <span role="img" aria-label="edit">✏️</span></a>
               </span>
             </small>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -94,6 +99,8 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        postPath
+        contentUrl
         menu {
           search {
             name
