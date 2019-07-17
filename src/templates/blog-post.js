@@ -55,7 +55,7 @@ class BlogPostTemplate extends React.Component {
                 」
               </span>
               <span className={styles.editMd}>
-                / <a href={contentUrl + slug.replace(postPath, '')}>Edit on Github <span role="img" aria-label="edit">✏️</span></a>
+                / <a href={contentUrl + slug.replace(postPath, '') + 'index.md'}>Edit on Github <span role="img" aria-label="edit">✏️</span></a>
               </span>
             </small>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
