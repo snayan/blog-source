@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font: 16px/1.8 "Open Sans", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+  font: 15px/1.8 "Open Sans", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
   color: var(--textNormal);
   background-color: var(--bg);
   /* background-image: url(../../content/assets/gradient.png);
@@ -122,6 +122,18 @@ footer {
 }
 
 @media (max-width: 767px) {
+  h1 {
+    font-size: 1.6em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  h4 {
+    font-size: 1.0em;
+  }
   table {
     position: relative;
     background: var(--waring);

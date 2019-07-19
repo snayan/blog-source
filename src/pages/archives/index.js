@@ -18,7 +18,7 @@ class Archives extends React.Component {
 
     return (
       <Page location={this.props.location} title="归档">
-        <h1>文章归档</h1>
+        <h2>文章归档</h2>
         {Object.keys(content)
           .sort((a, b) => b - a)
           .map(year => {
@@ -28,7 +28,7 @@ class Archives extends React.Component {
             }
             return (
               <React.Fragment key={year}>
-                <h2>{year}</h2>
+                <h3>{year}</h3>
                 <ul>
                   {posts.map(article => {
                     return (
