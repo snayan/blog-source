@@ -23,20 +23,20 @@ class BlogPostTemplate extends React.Component {
       >
         <div className={styles.post}>
           <div className={styles.author}>
-            <Image
-              fixed={this.props.data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                width: 40,
-                height: 40,
-                display: "block",
-                opacity: 0.5,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
-            <Link to="/">
+            <Link to="/" style={{ display: 'flex' }}>
+              <Image
+                fixed={this.props.data.avatar.childImageSharp.fixed}
+                alt={author}
+                style={{
+                  width: 40,
+                  height: 40,
+                  display: "block",
+                  opacity: 0.5,
+                }}
+                imgStyle={{
+                  borderRadius: `50%`,
+                }}
+              />
               <h2 className={styles.siteTitle}>{siteTitle}</h2>
             </Link>
           </div>
@@ -55,7 +55,13 @@ class BlogPostTemplate extends React.Component {
                 」
               </span>
               <span className={styles.editMd}>
-                / <a href={contentUrl + slug.replace(postPath, '') + 'index.md'}>Edit on Github <span role="img" aria-label="edit">✏️</span></a>
+                /{" "}
+                <a href={contentUrl + slug.replace(postPath, "") + "index.md"}>
+                  Edit on Github{" "}
+                  <span role="img" aria-label="edit">
+                    ✏️
+                  </span>
+                </a>
               </span>
             </small>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
