@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/Layout"
+import TOC from "../components/TOC"
 import { getSearchLink } from "../utils"
 import styles from "./blog-post.module.css"
 
@@ -23,7 +24,7 @@ class BlogPostTemplate extends React.Component {
       >
         <div className={styles.post}>
           <div className={styles.author}>
-            <Link to="/" style={{ display: 'flex' }}>
+            <Link to="/" style={{ display: "flex" }}>
               <Image
                 fixed={this.props.data.avatar.childImageSharp.fixed}
                 alt={author}
@@ -64,8 +65,11 @@ class BlogPostTemplate extends React.Component {
                 </a>
               </span>
             </small>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <hr style={{}} />
+            <div className={styles.contentContainer}>
+              <TOC tableOfContents={post.tableOfContents} />
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </div>
+            <hr />
 
             <nav className={styles.footerNav}>
               {previous && (
@@ -119,6 +123,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

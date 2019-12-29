@@ -67,3 +67,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.setFieldsOnGraphQLNodeType = require('./plugins/gatsby-remark-toc/toc');

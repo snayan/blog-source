@@ -39,6 +39,10 @@
   margin: 0;
 }
 
+.contentContainer {
+  position: relative;
+}
+
 .footerNav {
   margin: 0;
   overflow: hidden;

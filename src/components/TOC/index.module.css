@@ -1,0 +1,47 @@
+.toc-container {
+  position: absolute;
+  right: -2.1875em;
+  top: 2px;
+  padding: 6px;
+  border: 1px solid var(--borderLine);
+  font-size: 14px;
+  transform: translateX(100%);
+  transform: translateX(calc(100% + 2px));
+}
+
+.toc-title {
+  padding: 0 4px;
+  margin: 0;
+}
+
+.toc-title strong {
+  border-bottom: 1px solid var(--borderLine);
+  display: block;
+}
+
+.toc {
+  min-width: 120px;
+  max-width: 260px;
+}
+
+.toc p {
+  margin: 0;
+}
+
+.toc ul {
+  margin: 0.5em 0.5em 0.5em 1.5em;
+}
+
+.toc ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .toc-container {
+    position: relative;
+    right: 0;
+    transform: none;
+    margin-bottom: 15px;
+  }
+}

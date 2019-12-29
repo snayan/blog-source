@@ -74,6 +74,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-toc`
         ],
       },
     },
@@ -115,6 +116,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet`
   ],
 }

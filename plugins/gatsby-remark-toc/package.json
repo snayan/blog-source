@@ -1,0 +1,15 @@
+{
+  "name": "gatsby-remark-toc",
+  "version": "1.0.0",
+  "description": "gatsby plugin for create table of content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "snayan@sina.com",
+  "license": "MIT",
+  "dependencies": {
+    "mdast-util-to-string": "^1.0.7",
+    "unist-util-visit": "^2.0.1"
+  }
+}
