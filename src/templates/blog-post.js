@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/Layout"
 import TOC from "../components/TOC"
+import Zan from "../components/Zan"
 import { getSearchLink } from "../utils"
 import styles from "./blog-post.module.css"
 
@@ -15,6 +16,11 @@ class BlogPostTemplate extends React.Component {
     const postPath = this.props.data.site.siteMetadata.postPath
     const { previous, next, slug } = this.props.pageContext
     const searchLink = this.props.data.site.siteMetadata.menu.search.link
+    const ableZan = this.props.data.site.siteMetadata.ableZan
+    let postZan = post.frontmatter.zan
+    if (postZan == null) {
+      postZan = true
+    }
 
     return (
       <Layout
@@ -31,7 +37,6 @@ class BlogPostTemplate extends React.Component {
                 style={{
                   width: 40,
                   height: 40,
-                  display: "block",
                   opacity: 0.5,
                 }}
                 imgStyle={{
@@ -69,6 +74,9 @@ class BlogPostTemplate extends React.Component {
               <TOC tableOfContents={post.tableOfContents} />
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
+
+            <Zan ableZan={ableZan && postZan}/>
+
             <hr />
 
             <nav className={styles.footerNav}>
@@ -111,6 +119,7 @@ export const pageQuery = graphql`
         author
         postPath
         contentUrl
+        ableZan
         menu {
           search {
             name
@@ -128,6 +137,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tags
+        zan
       }
     }
   }

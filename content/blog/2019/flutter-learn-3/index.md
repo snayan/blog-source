@@ -2,6 +2,7 @@
 title: flutter 学习小结（三）
 date: 2019-11-30 17:22:00
 tags: [flutter]
+zan: true
 ---
 
 [上一篇文章](/post/2019/flutter-learn-2)中，我们学习了 flutter 中三个主要的 widget，分别是 StatelessWidget，StatefulWidget，和 RenderObjectWidget；也简单介绍了 Widget，Element 和 RenderObject 之间的关系。这一篇，将介绍如何在 flutter 应用中进行状态管理以及其基本的原理。

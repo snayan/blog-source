@@ -8,6 +8,7 @@ module.exports = {
     contentUrl: `https://github.com/snayan/blog-source/tree/master/content/blog`,
     postPath: "/post",
     postLimit: 10,
+    ableZan: true,
     menu: {
       home: {
         name: "首页",
