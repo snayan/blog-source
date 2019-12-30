@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "snayan-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "三羊的小站，记录前端相关知识，思考与总结",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "三羊",
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
     "gatsby": "^2.8.6",
@@ -38,15 +35,16 @@
     "gh-pages": "^2.0.1",
     "prettier": "^1.18.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/snayan/github.snayan.io",
   "keywords": [
-    "gatsby"
+    "snayan",
+    "blog"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/snayan/blog-source.git"
   },
   "scripts": {
     "build": "gatsby build",
