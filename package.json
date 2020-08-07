@@ -26,7 +26,7 @@
     "gatsby-transformer-sharp": "^2.1.21",
     "katex": "^0.10.2",
     "normalize.css": "^8.0.1",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.21.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1"
