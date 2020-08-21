@@ -166,7 +166,7 @@ class InternalComponent {
 
 **注意跟 InternalComponent tree 中不同是，每一个节点，最多只能有一个 child**。一个 [Fiber node](https://github.com/facebook/react/blob/v16.13.1/packages/react-reconciler/src/ReactFiber.js#L128-L257)，也是一个对象，除了 return ，child，sibling 之外，列觉一些比较重要的信息如下，
 
-1. statNode，存储 class component instance 或者 dom
+1. stateNode，存储 class component instance 或者 dom
 2. type，跟 react element type 一致
 3. alternate，指向 workInProgress 中对应 Fiber node
 4. [tag](https://github.com/facebook/react/blob/769b1f270e1251d9dbdce0fcbd9e92e502d059b8/packages/shared/ReactWorkTags.js)，标志当前 Fiber node 组件的类型，根据 react element type 而得出。
