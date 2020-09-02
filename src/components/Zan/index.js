@@ -50,7 +50,7 @@ export default function Zan(props) {
 
   return (
     <div className={styles["zan"]}>
-      <p className={styles["zanDesc"]}>若有收获，小额赞赏</p>
+      <p className={styles["zanDesc"]}>若有收获，小额鼓励</p>
       <button className={styles["zanButton"]} onClick={toggleZanPic}>
         赞
       </button>
