@@ -129,7 +129,7 @@ type CallbackConfigType = {
 }
 ```
 
-使用一个两个变量，来分别执行链表的头节点和尾部节点，
+使用两个变量，来分别指向链表的头节点和尾部节点，
 
 ```js
 // 链表头节点
@@ -138,7 +138,7 @@ let headOfPendingCallbacksLinkedList = null
 let tailOfPendingCallbacksLinkedList = null
 ```
 
-在执行`rIC(callback)`时，每次将当前 callback 节点放到链表尾部，
+在执行`rIC(callback)`时，每次将当前 callback 节点添加到链表尾部，
 
 ```js
 rIC = function(callback, options) {

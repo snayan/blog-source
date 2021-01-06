@@ -179,7 +179,7 @@ var animationTick = function(rafTime) {
 
 既然`postMessage`的作用是异步调度，那么为什么不使用`setTimeout`呢，它同样是可以实现异步调度？
 
-如果不使用 rIC，我们是无法真正准确的确定帧空闲时机的。上面使用`postMessage`实现异步调度，是为了交出 js 线程执行权，让渲染相关线程得到执行。上面结合使用 rAF 动态计算出当前帧率，得出帧截止时间，从而可以较准确的计算得到 rIC 中参数`timeRemaining`。需要注意的是，帧截止时间是在 rAF 中以当前帧开始时间为基准算的，就是说，我们默认`callback`在计算完成帧截止时间之后就开始执行的。但是如前面所说，我们不能直接在 rAF 里执行`callback`，而是使用异步调度。异步调度越早开始，那么`timeRemaining`得到值的误差就会越小。例如，帧开始时间是 10ms，以 10ms 为基准计算得到帧截止时间为 30ms，也就是说帧执行时间会总共有 20ms，如果异步调度是在 5ms 之后开真正执行`callback`，那么在`callback`中调用`timeRemaining`得到的时间只有`30 - 5 = 25`，比预期的少了 5ms。
+如果不使用 rIC，我们是无法真正准确的确定帧空闲时机的。上面使用`postMessage`实现异步调度，是为了交出 js 线程执行权，让渲染相关线程得到执行。上面结合使用 rAF 动态计算出当前帧率，得出帧截止时间，从而可以较准确的计算得到 rIC 中参数`timeRemaining`。需要注意的是，帧截止时间是在 rAF 中以当前帧开始时间为基准算的，就是说，我们默认`callback`在计算完成帧截止时间之后就开始执行的。但是如前面所说，我们不能直接在 rAF 里执行`callback`，而是使用异步调度。异步调度越早开始，那么`timeRemaining`得到值的误差就会越小。例如，帧开始时间是 10ms，以 10ms 为基准计算得到帧截止时间为 30ms，如果`callback`立即执行,`timeRemaining`的时间就是`30 - 0 = 30`；如果异步调度是在 5ms 之后开真正执行`callback`，那么在`callback`中调用`timeRemaining`的时间只有`30 - 5 = 25`，比预期的少了 5ms。
 
 为了减少误差，React 使用了`postMessage`，而不是`setTimeout`，因为`postMessage`比`setTimeout`要早得到执行。对于现代浏览器来说，使用`setTimeout(callback,0)`，会存在 4ms 的执行间隔限制。
 
@@ -190,14 +190,16 @@ var animationTick = function(rafTime) {
 
 考虑如下代码，在`setTimeout`里调用`setTimeout`，当`cb`执行 5 次之后，则后面`cb`必须至少间隔 4ms 执行。
 
-> **Note**: 4 ms is [specified by the HTML5 spec](http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#timers) and is consistent across browsers released in 2010 and onward. Prior to (Firefox 5.0 / Thunderbird 5.0 / SeaMonkey 2.2), the minimum timeout value for nested timeouts was 10 ms.
-
 ```js
 function cb() {
   setTimeout(cb, 0)
 }
 setTimeout(cb, 0)
 ```
+
+不同浏览器实现不一样，有的可能是大于4ms,
+
+> **Note**: 4 ms is [specified by the HTML5 spec](http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#timers) and is consistent across browsers released in 2010 and onward. Prior to (Firefox 5.0 / Thunderbird 5.0 / SeaMonkey 2.2), the minimum timeout value for nested timeouts was 10 ms.
 
 使用`postMessage`可以较早于`setTimeout`执行，下面是 MDN 上的描述
 
