@@ -30,6 +30,7 @@ module.exports = {
     social: {
       github: "https://github.com/snayan",
       email: `mailto:snayan@sina.com`,
+      wechat: `/wechat`
     },
   },
   plugins: [

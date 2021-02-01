@@ -22,6 +22,9 @@ export const getIcon = name => {
     case "rss":
       icon = ICONS.RSS
       break
+    case "wechat":
+      icon = ICONS.WECHAT
+      break;
     default:
       icon = {}
       break

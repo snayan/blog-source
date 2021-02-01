@@ -109,6 +109,7 @@ const bioQuery = graphql`
         social {
           email
           github
+          wechat
         }
       }
     }
